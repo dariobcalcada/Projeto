@@ -8,7 +8,7 @@ erros de índices inexistentes na lista.
 
 import os
 #os.system('cls')
-lista = ['teste', 'teste2']
+lista = []
 
 while True:
     print('Selecione uma opção')
@@ -58,8 +58,9 @@ while True:
                 print('Item apagado como sucesso')
                 continue
     else:
+        if (option == 'i'):
         #INSERIR ITEM NA LISTA
-        item_novo = input('Digite o item que deseja inserir: ')
-        lista.append(item_novo)
-        print('Item adicionado com sucesso!')
-        continue
+            item_novo = input('Digite o item que deseja inserir: ')
+            lista.append(item_novo)
+            print('Item adicionado com sucesso!')
+            continue
