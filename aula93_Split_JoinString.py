@@ -2,6 +2,8 @@
 split e join com list e str
 split - divide uma string (list)
 join - une uma string
+strip - elimina espaços nas extremidades da string
+append - COLOCA ITENS NA LISTA
 """
 frase = 'Olha só que, coisa interessante'
 lista_frases_cruas = frase.split()
