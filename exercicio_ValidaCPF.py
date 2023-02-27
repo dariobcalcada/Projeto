@@ -51,5 +51,68 @@ O segundo dígito do CPF é 0
 """
 # cpf = '36440847007'  # Esse CPF gera o primeiro dígito como 10 (0)
 
-cpf = input('Digite seu CPF completo: ')
-print(cpf)
+cpf_digitado = input('Digite seu CPF completo (somente números): ')
+
+while True:
+
+    if len(cpf_digitado) != 11:
+        print('CPF com quantidade de dígitos errada')
+        break
+    
+    try:
+        cpf = int(cpf_digitado)
+
+    except:    
+        print('Favor digitar apenas números!')
+        break
+    
+    #PEGANDO DIGITOS VERIFICADORES PARA POSTERIOR COMPARAÇÃO
+    primeiroDV = int(cpf_digitado[9])
+    segundoDV = int(cpf_digitado[10])
+
+    # print(f'Este é o primeiro DV: {primeiroDV}')
+    # print(f'Este é o segundo DV: {segundoDV}')
+
+    d1 = int(cpf_digitado[0])
+    d2 = int(cpf_digitado[1])
+    d3 = int(cpf_digitado[2])
+    d4 = int(cpf_digitado[3])
+    d5 = int(cpf_digitado[4])
+    d6 = int(cpf_digitado[5])
+    d7 = int(cpf_digitado[6])
+    d8 = int(cpf_digitado[7])
+    d9 = int(cpf_digitado[8])
+
+    soma1 = ((d1*10) + (d2*9) +(d3*8) + (d4*7) + (d5*6) + (d6*5) + (d7*4) + (d8*3) + (d9*2)) * 10
+    rest1 = soma1 % 11
+    if rest1 == 10:
+        rest1 = 0
+    
+    dv1 = rest1
+
+    if dv1 == primeiroDV:
+        print('Primeiro dígito verificador válido!')
+    else:
+        print('CPF Inválido!')
+        break
+    
+    soma2 = ((d1*11) + (d2*10) +(d3*9) + (d4*8) + (d5*7) + (d6*6) + (d7*5) + (d8*4) + (d9*3) + (dv1*2)) * 10
+    rest2 = soma2 % 11
+    if rest2 == 10:
+        rest2 = 0
+    
+    dv2 = rest2
+
+    if dv2 == segundoDV:
+        print('Segundo dígito verificador válido!')
+    else:
+        print('CPF Inválido!')
+        break    
+    
+
+    print(f'O CPF {cpf_digitado} é válido!')
+    break
+
+
+
+
