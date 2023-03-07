@@ -93,6 +93,7 @@ while True:
     if dv1 == primeiroDV:
         print('Primeiro dígito verificador válido!')
     else:
+        print('Primeiro dígito verificador inválido!')
         print('CPF Inválido!')
         break
     
@@ -106,6 +107,7 @@ while True:
     if dv2 == segundoDV:
         print('Segundo dígito verificador válido!')
     else:
+        print('Segundo dígito verificador inválido!')
         print('CPF Inválido!')
         break    
     
