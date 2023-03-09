@@ -28,5 +28,5 @@ def par_impar(x):
         return f' {x} é impar'
     
 
+numero = input('')
 print(par_impar(2))
-print(par_impar(5))
