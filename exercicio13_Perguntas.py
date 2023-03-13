@@ -30,27 +30,36 @@ for questoes in perguntas:
     resposta_atual = questoes.get('Resposta')
 
     print(f'Pergunta: {pergunta_atual}')
-    
+    print()
+
+
     contador_opcao = range(len(opcoes_atual)) #Percorrendo a lista de opções
     for indice, nome in enumerate(opcoes_atual):
         print(f'{indice}){nome}')
         #Pegando a resposta do usuário
+    print()
     resposta_usuario = input('Escolha uma opção: ')
 
+
+    print()
     try:
         resposta_usuario_int = int(resposta_usuario)
     except:
         print('Digite uma opção válida! Reinicie o teste...')
+        print()
         break
     
-    if resposta_usuario_int < len(opcoes_atual):
+    if (resposta_usuario_int < len(opcoes_atual)) and (resposta_usuario_int >= 0):
         #verificando se a resposta está correta
         if opcoes_atual[resposta_usuario_int] == resposta_atual:
             print('Acertou 🎉')
+            print()
             acertos += 1
         else:
             print('Errrrrrrrou 😧')
+            print()
     else:
         print('Errrrrrrrou 🙄! Digite uma opção válida!')
+        print()
 
 print (f'Você acertou {acertos} de {total_questoes} questões!')
