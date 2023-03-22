@@ -24,32 +24,25 @@ lista_de_listas_de_inteiros = [
     [4, 7, 6, 5, 2, 9, 2, 1, 2, 1],
     [5, 3, 1, 8, 5, 7, 1, 8, 8, 7],
     [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
-    [10, 9, 8, 7, 6, 5, 4, 3, 2, 10],
 ]
 
 
-#### Função de verificação e retorno de item duplicado ###
-def verifica_duplicado (lista):
-    
-    tamanho_lista = len(lista)
-    set_lista = set(lista)
-    tamanho_set = len(set_lista)
-    
-    if tamanho_lista == tamanho_set:
-        return -1
-    else:
-        lista_auxiliar = []
-        for item in lista:
-            if item in lista_auxiliar:
-                return item
-            else:
-                lista_auxiliar.append(item)
+def encontra_primeiro_duplicado(lista_de_inteiros):
+    numeros_checados = set()
+    primeiro_duplicado = -1
+
+    for numero in lista_de_inteiros:
+        if numero in numeros_checados:
+            primeiro_duplicado = numero
+            break
+
+        numeros_checados.add(numero)
+
+    return primeiro_duplicado
 
 
-####  Programa 'Principal' ####
 for lista in lista_de_listas_de_inteiros:
-    ret = verifica_duplicado(lista)
-    if ret == -1:
-        print(f'A lista {lista} nãõ possui valor duplicado')
-    else:
-        print(f'Para a lista {lista} o primeiro número duplicado é {ret}')
+    print(
+        lista,
+        encontra_primeiro_duplicado(lista)
+    )
