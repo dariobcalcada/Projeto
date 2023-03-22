@@ -50,6 +50,6 @@ def verifica_duplicado (lista):
 for lista in lista_de_listas_de_inteiros:
     ret = verifica_duplicado(lista)
     if ret == -1:
-        print(f'A lista {lista} nãõ possui valor duplicado')
+        print(f'A lista {lista} não possui valor duplicado')
     else:
         print(f'Para a lista {lista} o primeiro número duplicado é {ret}')
