@@ -18,10 +18,6 @@ produtos = [
 
 produtos_mais_dez = produtos
 
-
-
-produtos_preco_cresc = produtos
-
 for produto in produtos_mais_dez:
     preco = produto.get('preco')
     preco *= 1.1
@@ -32,13 +28,20 @@ print(produtos_mais_dez)
 print()
 print()
 
-produtos_nome_decrescente = produtos
-produtos_nome_decrescente = sorted(produtos)
+produtos_nome_decrescente = sorted(produtos, key=lambda k: k['nome'], reverse=True)
 
+
+print('*** Essa é a lista de produtos na ordem descrescente do nome ***')
 print(produtos_nome_decrescente)
+print()
+print()
 
 
+produtos_preco_cresc = sorted(produtos, key=lambda k: k['preco'])
 
-
+print('*** Essa é a lista de produtos na ordem crescente do preço ***')
+print(produtos_preco_cresc)
+print()
+print()
 
 
